@@ -1,0 +1,53 @@
+<div *ngIf="todos$ | async as todos" class="todo-container">
+  <div
+    class="headline-container d-flex justify-content-center align-items-center">
+    <h1
+      class="me-2"
+      matBadgePosition="before"
+      matBadge="{{ todos.length }}"
+      matBadgeOverlap="false">
+      Todo-List
+    </h1>
+    <mat-icon matTooltip="Create" (click)="addTodo()">add</mat-icon>
+  </div>
+
+  <div class="todo-list-container">
+    <ng-container *ngIf="example === 'ngrx'; else lightweight">
+      <div
+        *ngFor="let todo of todos"
+        class="todo-line d-flex align-items-center justify-content-between">
+        <h3
+          [class.todo-finish]="todo.finish"
+          matTooltip="Created at {{ todo.createdAt | date : 'dd.MM.yyyy' }}">
+          {{ todo.title }}
+        </h3>
+
+        <div>
+          <mat-icon matTooltip="Edit" (click)="updateTodo(todo)">edit</mat-icon>
+          <mat-icon matTooltip="Delete" (click)="deleteTodo(todo)"
+            >delete</mat-icon
+          >
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #lightweight>
+      <div
+        *ngFor="let todo of todos | sortby : 'finish'"
+        class="todo-line d-flex align-items-center justify-content-between">
+        <h3
+          [class.todo-finish]="todo.finish"
+          matTooltip="Created at {{ todo.createdAt | date : 'dd.MM.yyyy' }}">
+          {{ todo.title }}
+        </h3>
+
+        <div>
+          <mat-icon matTooltip="Edit" (click)="updateTodo(todo)">edit</mat-icon>
+          <mat-icon matTooltip="Delete" (click)="deleteTodo(todo)"
+            >delete</mat-icon
+          >
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 {
+  "parser": "@typescript-eslint/parser",
   "root": true,
   "ignorePatterns": [
     "projects/**/*"
@@ -12,10 +13,15 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended",
+        "plugin:cypress/recommended"
       ],
       "rules": {
-        "semi": [2, "always"],
+        "semi": [
+          2,
+          "always"
+        ],
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -42,6 +48,14 @@
         "plugin:@angular-eslint/template/recommended"
       ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:@ngrx/recommended"
+      ]
     }
   ]
 }

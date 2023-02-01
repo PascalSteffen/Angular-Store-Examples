@@ -1,0 +1,90 @@
+@import '../../../shared/styles/core.scss';
+
+.todo-container {
+  width: 400px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  height: 600px;
+}
+
+.headline-container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid $base-color;
+  position: fixed;
+  width: 398px;
+
+  h1 {
+    margin: 0;
+    max-width: 100px;
+
+    .mat-badge-content {
+      background: $base-color;
+    }
+  }
+}
+
+.todo-list-container {
+  margin-top: 96px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.todo-line {
+  border-bottom: 1px solid lightgray;
+  transition: all 225ms ease-in-out;
+  text-align: start;
+  padding: 16px;
+
+  h3 {
+    margin: 0;
+  }
+
+  &:last-child {
+    border-bottom: unset;
+  }
+}
+
+.todo-finish {
+  color: lightgray;
+}
+
+:host mat-icon {
+  transition: all 225ms ease-in-out;
+  margin-right: 12px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    transition: all 225ms ease-in-out;
+    cursor: pointer;
+    color: $base-color;
+  }
+}
+
+::ng-deep .tooltip-inner {
+  background-color: $base-color;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $base-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #131111;
+}

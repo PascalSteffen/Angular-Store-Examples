@@ -1,0 +1,6 @@
+<app-header></app-header>
+
+<app-loading [detectRoutingOngoing]="true"></app-loading>
+
+<router-outlet
+  *ngIf="(this.loadingService.loading$ | async) === false"></router-outlet>

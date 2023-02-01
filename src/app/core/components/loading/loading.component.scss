@@ -1,0 +1,6 @@
+@import '../../../shared/styles/core.scss';
+
+::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: black !important;
+}

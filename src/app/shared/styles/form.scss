@@ -1,0 +1,36 @@
+:host ::ng-deep input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: white !important;
+}
+
+::ng-deep .my-form-field.mat-form-field-appearance-legacy .mat-input-element {
+  caret-color: black !important;
+  color: black !important;
+}
+
+::ng-deep .mat-select-arrow {
+  color: black !important;
+}
+
+::ng-deep .mat-form-field-label,
+.mat-focused {
+  color: black !important;
+}
+
+/* Border */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black !important;
+}
+
+/* Font color */
+::ng-deep input.mat-input-element {
+  color: black !important;
+  caret-color: black !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color: black !important;
+}

@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>{{ dialogTitle }}</h2>
+
+<ng-container *ngIf="mode === 'delete'">
+  <p>Are you sure that you want to delete this todo?</p>
+</ng-container>
+
+<div class="d-flex flex-column my-3">
+  <ng-container *ngIf="form && mode !== 'delete'">
+    <ng-container [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title" />
+
+        <mat-error *ngIf="this.title.errors?.['required']">
+          Title is required.
+        </mat-error>
+
+        <mat-error *ngIf="this.title.errors?.['pattern']">
+          This Title has invalid chars.
+        </mat-error>
+      </mat-form-field>
+
+      <ng-container *ngIf="mode === 'update'">
+        <mat-slide-toggle formControlName="finish"
+          >Todo finish?</mat-slide-toggle
+        >
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>
+
+<mat-dialog-actions class="d-flex justify-content-between">
+  <button mat-raised-button (click)="onClose()">Close</button>
+
+  <button
+    class="button-color"
+    mat-raised-button
+    [disabled]="!form?.valid && !(this.mode === 'delete')"
+    (click)="onSave()">
+    {{ buttonTitle }}
+  </button>
+</mat-dialog-actions>

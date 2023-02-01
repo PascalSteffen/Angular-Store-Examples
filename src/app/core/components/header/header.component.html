@@ -1,0 +1,20 @@
+<div class="header-container d-flex align-items-center justify-content-between">
+  <mat-icon matTooltip="Back to options" routerLink="/options" class="me-2"
+    >arrow_back</mat-icon
+  >
+
+  <mat-icon
+    *ngIf="this.authService.isLoggedOut$ | async"
+    matTooltip="Login"
+    routerLink="/login"
+    class="me-2"
+    >login</mat-icon
+  >
+  <mat-icon
+    *ngIf="this.authService.isLoggedIn$ | async"
+    matTooltip="Logout"
+    (click)="logout()"
+    class="me-2"
+    >logout</mat-icon
+  >
+</div>
