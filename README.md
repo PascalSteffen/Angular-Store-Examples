@@ -13,6 +13,7 @@ The project shows you the difference between NgRx-Store/Data and an Lightweight 
 - Custom Preload Strategy
 - Route-Event-Loading
 - Reactive Forms
+- Custom Password Strength Validator
 - Utils fuctions fort sorting Data
 
 if you want to test the project than you need the backend from this repository
