@@ -7,6 +7,9 @@ import { AuthService } from 'src/app/core/service/auth.service';
 import { AuthActions } from 'src/app/core/store/actions-types';
 import { AppState } from 'src/app/core/reducers';
 import { LoggerService } from 'src/app/core/service/logger.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateUserDialogComponent } from '../../../create-user-dialog/create-user-dialog.component';
+import { defaultDialogConfig } from 'src/app/shared/utils/default-dialog-config';
 
 @Component({
   selector: 'app-login-detail',
@@ -29,7 +32,8 @@ export class LoginDetailComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private store: Store<AppState>,
-    private loggerService: LoggerService
+    private loggerService: LoggerService,
+    private dialog: MatDialog
   ) {}
 
   get email() {
@@ -61,5 +65,11 @@ export class LoginDetailComponent {
         })
       )
       .subscribe();
+  }
+
+  createUserDialog() {
+    const dialogConfig = defaultDialogConfig();
+
+    this.dialog.open(CreateUserDialogComponent, dialogConfig);
   }
 }

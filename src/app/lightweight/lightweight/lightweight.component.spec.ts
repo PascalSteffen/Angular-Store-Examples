@@ -1,7 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LightweightModule } from '../lightweight.module';
-
 import { LightweightComponent } from './lightweight.component';
 
 describe('LightweightComponent', () => {
@@ -10,7 +9,6 @@ describe('LightweightComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LightweightComponent],
       imports: [HttpClientTestingModule, LightweightModule],
     }).compileComponents();
 

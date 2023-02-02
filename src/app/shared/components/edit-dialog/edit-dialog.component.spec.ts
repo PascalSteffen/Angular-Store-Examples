@@ -11,7 +11,6 @@ describe('EditDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EditDialogComponent],
       imports: [HttpClientTestingModule, AppModule],
       providers: [
         { provide: MatDialogRef, useValue: {} },

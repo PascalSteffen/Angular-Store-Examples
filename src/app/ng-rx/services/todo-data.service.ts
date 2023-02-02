@@ -13,26 +13,23 @@ export class TodoDataService extends DefaultDataService<Todo> {
 
   override getAll(): Observable<Todo[]> {
     return this.http
-      .get<Todo[]>('http://localhost:9000/api/todos')
+      .get<Todo[]>('/api/todos')
       .pipe(map((todos) => todos['todos']));
   }
 
   override update(update: Update<Todo>): Observable<Todo> {
-    return this.http.patch<Todo>(
-      `http://localhost:9000/api/todos/${update.id}`,
-      {
-        ...update.changes,
-      }
-    );
+    return this.http.patch<Todo>(`/api/todos/${update.id}`, {
+      ...update.changes,
+    });
   }
 
   override add(todo: Todo): Observable<Todo> {
     return this.http
-      .post<Todo>('http://localhost:9000/api/todos', todo)
+      .post<Todo>('/api/todos', todo)
       .pipe(map((todo) => todo['todo']));
   }
 
   override delete(key: number): Observable<number> {
-    return this.http.delete<number>(`http://localhost:9000/api/todos/${key}`);
+    return this.http.delete<number>(`/api/todos/${key}`);
   }
 }

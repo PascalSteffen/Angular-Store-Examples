@@ -3,7 +3,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: white !important;
+  -webkit-text-fill-color: black !important;
 }
 
 ::ng-deep .my-form-field.mat-form-field-appearance-legacy .mat-input-element {

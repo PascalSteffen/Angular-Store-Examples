@@ -9,7 +9,7 @@ describe('TodoDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodoDetailComponent],
+      declarations: [],
       imports: [AppModule],
     }).compileComponents();
 

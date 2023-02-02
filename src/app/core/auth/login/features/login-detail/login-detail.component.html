@@ -43,8 +43,11 @@
     [disabled]="!form.valid"
     (click)="login()"
     class="button-color"
-    mat-raised-button
-    color="primary">
+    mat-raised-button>
     Login
+  </button>
+
+  <button (click)="createUserDialog()" class="mt-3" mat-raised-button>
+    Create User
   </button>
 </form>

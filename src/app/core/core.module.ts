@@ -9,9 +9,14 @@ import { authReducer } from './store/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/auth.effects';
 import { SharedModule } from '../shared/shared.module';
+import { CreateUserDialogComponent } from './auth/create-user-dialog/create-user-dialog.component';
 
 @NgModule({
-  declarations: [LoginComponent, LoginDetailComponent],
+  declarations: [
+    LoginComponent,
+    LoginDetailComponent,
+    CreateUserDialogComponent,
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,

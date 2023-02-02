@@ -10,7 +10,6 @@ describe('OptionRouteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OptionRouteComponent],
       imports: [OptionRouteModule, RouterTestingModule],
     }).compileComponents();
 

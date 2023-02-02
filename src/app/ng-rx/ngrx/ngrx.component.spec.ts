@@ -1,5 +1,4 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EntityDataModule } from '@ngrx/data';
 import { StoreModule } from '@ngrx/store';
@@ -14,7 +13,6 @@ describe('NgrxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgrxComponent],
       imports: [
         StoreModule.forRoot(),
         EntityDataModule.forRoot(entityConfig),
@@ -22,7 +20,6 @@ describe('NgrxComponent', () => {
         NgRxModule,
       ],
       providers: [],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NgrxComponent);
